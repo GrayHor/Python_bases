@@ -4,6 +4,25 @@
 # Округление должно происходить по математическим правилам (0.6 --> 1, 0.4 --> 0).
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
+'''
+def rounding(x, y):
+    y = 10 ** y
+    fractional = (((x - int(x)) * y)) - int(((x - int(x)) * y))
+    if fractional >= 0.5:
+        temp = int(((x - int(x)) * y)) + 1
+    else:
+        temp = int(((x - int(x)) * y))
+
+    rez = int(x) + temp / y
+    return rez
+
+x = float(input())
+y = int(input())
+rez = rounding(x,y)
+
+print(rez)
+
+'''
 
 # Задание-2:
 # Дан шестизначный номер билета. Определить, является ли билет счастливым.
@@ -11,7 +30,13 @@
 # Билет считается счастливым, если сумма его первых и последних цифр равны.
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
+x = input()
+def happy(x):
+    a = int(x[0]) + int(x[1]) + int(x[2])
+    b = int(x[3]) + int(x[4]) + int(x[5])
+    if a == b:
+        return True
 
-
+print(happy(x))
 
 
